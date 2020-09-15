@@ -1,32 +1,12 @@
 <div class="row align-items-center">
     <div class="col-6 col-md-6 ">
-        <img src="assets/images/Grupo 4.png" width="146">
+        <img src="assets/images/logo.svg" width="146">
     </div>
     <div class="col-md-5 pb-4 d-none d-lg-block">
         <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">
-                    Home
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    El proyecto
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Ubicación
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Filosofía
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    Beneficios
+            <li class="nav-item" *ngFor="let menuItem of menuItems">
+                <a class="nav-link" [ngClass]="{'active': menuItem.isActive}" [href]="menuItem.link" (click)="setActive(menuItem)" >
+                    {{menuItem.name}}
                 </a>
             </li>
         </ul>

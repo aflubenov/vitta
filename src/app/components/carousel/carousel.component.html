@@ -1,4 +1,4 @@
-<div class="container-fluid mainblock-carousel">
+<div class="container-fluid mainblock-carousel" [attr.id]="anchorId" >
     <div class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -6,51 +6,20 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+
+            <div class="carousel-item " [ngClass]="{'active': i==0}" *ngFor="let carrouselItem of carrouselItems;let i=index">
                 <div class="row no-gutters col-12 d-lg-none">
-                    <h6 class="carousel-item-title">URBANIZACION</h6>
+                    <h6 class="carousel-item-title">{{carrouselItem.shortTitle}}</h6>
                 </div>
                 <div class="row no-gutters align-items-end">
                     <div class="col-1 d-none d-lg-block">
-                        <h6 class="carousel-item-title carousel-item-title-rotated">VISTA DE LA URBANIZACION</h6>
+                        <h6 class="carousel-item-title carousel-item-title-rotated">{{carrouselItem.longTitle}}</h6>
                         <div class="carousel-item-number text-center">
-                            <h2>01</h2>
+                            <h2>{{carrouselItem.itemNumber}}</h2>
                         </div>
                     </div>
                     <div class="col">
-                        <img src="assets/images/barrio.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row no-gutters col-12 d-lg-none">
-                    <h6 class="carousel-item-title">HUERTA</h6>
-                </div>
-                <div class="row no-gutters align-items-end">
-                    <div class="col-1 d-none d-lg-block">
-                        <h6 class="carousel-item-title carousel-item-title-rotated">VISTA DE LA HUERTA</h6>
-                        <div class="carousel-item-number text-center">
-                            <h2>02</h2>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="assets/images/huerta.jpg" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="row no-gutters col-12 d-lg-none">
-                    <h6 class="carousel-item-title">PÓRTICO</h6>
-                </div>
-                <div class="row no-gutters align-items-end">
-                    <div class="col-1 d-none d-lg-block">
-                        <h6 class="carousel-item-title carousel-item-title-rotated">VISTA DEL PÓRTICO</h6>
-                        <div class="carousel-item-number text-center">
-                            <h2>03</h2>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <img src="assets/images/portico.jpg" class="d-block w-100" alt="...">
+                        <img [attr.src]="carrouselItem.imageUrl" class="d-block w-100" alt="...">
                     </div>
                 </div>
             </div>

@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-seccion-proyecto',
-  templateUrl: './seccion-proyecto.component.html',
-  styleUrls: ['./seccion-proyecto.component.scss']
+    selector: 'app-seccion-proyecto',
+    templateUrl: './seccion-proyecto.component.html',
+    styleUrls: ['./seccion-proyecto.component.scss']
 })
 export class SeccionProyectoComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+    constructor() {}
+    @Input() anchorId: string = "";
+    
+    ngOnInit(): void {
+    }
 
 }
