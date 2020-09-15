@@ -1,0 +1,26 @@
+<div class="row no-gutters bloqueInfoProyecto">
+    <div class="col-sm-4" [ngClass]="{'order-12': alignRight}">
+        <img [attr.src]="imgUrl">
+    </div>
+    <div class="col-sm-1" [ngClass]="{'order-11': alignRight}"></div>
+    <div class="col-sm-7" [ngClass]="{'text-right': alignRight}"> 
+        <div class="title"><mark>{{title}}</mark></div>
+        <div class="descripcion">
+            <p>{{description}}</p>
+        </div>
+        <div class="row items" *ngFor="let item of items">
+            <div class="col-1" [ngClass]="{'order-12-item': alignRight}" > <i class="fas fa-check-square"></i></div>
+            <div class="col-10"><span>{{item}}</span></div>
+
+        </div>
+    </div>
+</div>
+<div class="d-block d-sm-none text-center">
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <hr>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
