@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "comunidadevolutiva": {
+        "vitta": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/comunidadevolutiva",
+                        "outputPath": "dist/vitta",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "comunidadevolutiva:build"
+                        "browserTarget": "vitta:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "comunidadevolutiva:build:production"
+                            "browserTarget": "vitta:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "comunidadevolutiva:build"
+                        "browserTarget": "vitta:build"
                     }
                 },
                 "test": {
@@ -115,16 +115,16 @@
                     "builder": "@angular-devkit/build-angular:protractor",
                     "options": {
                         "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "comunidadevolutiva:serve"
+                        "devServerTarget": "vitta:serve"
                     },
                     "configurations": {
                         "production": {
-                            "devServerTarget": "comunidadevolutiva:serve:production"
+                            "devServerTarget": "vitta:serve:production"
                         }
                     }
                 }
             }
         }
     },
-    "defaultProject": "comunidadevolutiva"
+    "defaultProject": "vitta"
 }
