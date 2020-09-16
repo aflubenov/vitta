@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-seccion-serviciosy-diferenciales',
-  templateUrl: './seccion-serviciosy-diferenciales.component.html',
-  styleUrls: ['./seccion-serviciosy-diferenciales.component.scss']
+    selector: 'app-seccion-serviciosy-diferenciales',
+    templateUrl: './seccion-serviciosy-diferenciales.component.html',
+    styleUrls: ['./seccion-serviciosy-diferenciales.component.scss']
 })
 export class SeccionServiciosyDiferencialesComponent implements OnInit {
 
-  constructor() { }
+    @Input() anchorId: string = "";
+    constructor() {}
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

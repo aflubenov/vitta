@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-seccion-mapa',
-  templateUrl: './seccion-mapa.component.html',
-  styleUrls: ['./seccion-mapa.component.scss']
+    selector: 'app-seccion-mapa',
+    templateUrl: './seccion-mapa.component.html',
+    styleUrls: ['./seccion-mapa.component.scss']
 })
 export class SeccionMapaComponent implements OnInit {
 
-  constructor() { }
+    @Input() anchorId: string = ""; 
+    constructor() {}
 
-  ngOnInit(): void {
-  }
+
+    ngOnInit(): void {
+    }
 
 }
