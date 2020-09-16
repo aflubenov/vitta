@@ -30,6 +30,10 @@ $link-color: white;
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
+h2 {
+    font-weight: 900;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -79,6 +83,8 @@ hr {
 
 .bloqueInfoProyecto {
     margin-bottom: 2rem;
+
+
     .order-12,
     .order-11 {
         order: unset;
@@ -86,7 +92,6 @@ hr {
     .order-12-item {
         order: 12;
     }
-
 
     @include media-breakpoint-up(sm) {
         margin-bottom: 0px;
@@ -134,12 +139,29 @@ hr {
     background-color: $bgGrey;
     padding-top: 3rem;
     padding-bottom: 3rem;
+    position: relative;
+    @include media-breakpoint-up(md) {
+        &::after {
+            content: ' ';
+            display: inline-block;
+            background-image: url('assets/images/trazado1.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 250px;
+            height: 370px;
+            position: absolute;
+            top: -78px;
+            background-position: right top;
+            left: 0px;
+        }
+    }
+
     p {
-        color: $customGreyDark;
+        color: $bgColor;
     }
     h6 {
         font-family: $font-family-base;
-        color: $customGreyDark;
+        color: $bgColor;
         letter-spacing: 5px;
     }
     .blockquote {
@@ -173,6 +195,10 @@ hr {
 
 .mainblock-pie {
     background-color: $bgColor;
+    background-image: url('assets/images/trazado2.svg');
+    background-repeat: no-repeat;
+    background-position: right 220px bottom -50px;
+    background-size: 450px;
     padding-top: 4rem;
     i {
         color: $customGreen;
@@ -182,11 +208,12 @@ hr {
     }
     .piefirma {
         margin-top: 4rem;
-        color: white;
+        color: $bgColor;
         font-size: 13px;
         padding-top: 1rem;
         padding-bottom: 1rem;
         text-align: center;
+        background-color: $customGreen;
     }
 }
 
@@ -294,6 +321,11 @@ hr {
     }
 }
 .mainblock-mapa {
+    background-color: $bgColor;
+    @include media-breakpoint-up(md) {
+        background: linear-gradient(90deg, $bgGrey 40%, $bgColor 40%);
+    }
+
     padding-bottom: 7rem;
 
     .card-pattern {
@@ -339,7 +371,7 @@ hr {
     .important-text {
         position: relative;
         background-color: $customGreen;
-        color: white;
+        color: $bgColor;
         border-radius: 33px;
         padding: 37px 47px;
         p {
@@ -351,7 +383,7 @@ hr {
             position: absolute;
             top: -2rem;
             left: -2.1rem;
-            color: #f6c1bc;
+            color: $bgColor;
             display: inline-block;
             padding: 1.2rem 1.5rem;
             background-color: white;
@@ -378,6 +410,39 @@ hr {
 .mainblock-presentacion {
     padding-top: 2rem;
     padding-bottom: 5rem;
+    position: relative;
+    transform-style: preserve-3d;
+
+    @include media-breakpoint-up(md) {
+        &::before {
+            content: ' ';
+            display: inline-block;
+            background-image: url('assets/images/trazado1.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 350px;
+            height: 460px;
+            position: absolute;
+            bottom: 280px;
+            background-position: center;
+            right: 0px;
+        }
+
+        &::after {
+            content: ' ';
+            display: inline-block;
+            background-image: url('assets/images/trazado2.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 410px;
+            height: 460px;
+            position: absolute;
+            bottom: -30px;
+            background-position: left center;
+            right: 0px;
+            transform: translateZ(1px);
+        }
+    }
 
     .container-fluid-custom {
         padding: 0px;
@@ -397,36 +462,9 @@ hr {
     }
     .card-pattern {
         position: relative;
-        transform-style: preserve-3d;
-        @include media-breakpoint-up(md) {
-            &::before {
-                --p: 1;
-                --s: calc(1 - 2 * var(--p));
-                position: absolute;
-                right: -70px;
-                bottom: -50px;
-                -webkit-mask: var(--m);
-                mask: var(--m);
-                content: "";
-                width: 350px;
-                height: 200px;
-                transform: translateZ(-1px);
-            }
+       // transform-style: preserve-3d;
+       transform: translateZ(2px);
 
-            $s: 16px;
-
-            &::before {
-                background: linear-gradient(
-                        calc(var(--s) * 45deg),
-                        transparent calc(50% - 1px),
-                        $customGreen 0,
-                        $customGreen calc(50% + 2px),
-                        transparent 0
-                    )
-                    10px 16px / #{$s $s};
-                --m: linear-gradient(red 50%, transparent 50%) 0 calc(var(--p) *#{2 * $s}) / 100% #{$s};
-            }
-        }
     }
 
     .social-icons {
@@ -496,6 +534,23 @@ hr {
 .mainblock-proyecto {
     background: linear-gradient(180deg, $bgColor 1000px, white 400px);
     padding-bottom: 5rem;
+    position: relative;
+
+    @include media-breakpoint-up(xl) {
+        &::after {
+            content: ' ';
+            display: inline-block;
+            background-image: url('assets/images/trazado1.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 250px;
+            height: 340px;
+            position: absolute;
+            top: 390px;
+            background-position: right top;
+            left: 0px;
+        }
+    }
 
     @include media-breakpoint-up(sm) {
         background: linear-gradient(180deg, $bgColor 480px, white 400px);
@@ -563,7 +618,6 @@ hr {
 
     h2 {
         color: $customGreen;
-        font-weight: 900;
     }
     p {
         color: white;
@@ -577,6 +631,7 @@ hr {
         background-color: white;
         text-align: center;
         margin-bottom: 1rem;
+        font-size: 15px;
         .izquierda {
             border-radius: 50px;
             color: white;
