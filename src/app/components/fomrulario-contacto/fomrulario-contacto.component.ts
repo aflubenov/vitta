@@ -74,7 +74,7 @@ export class FomrularioContactoComponent implements OnInit {
         formulario.emailchk.value = formulario.emailchk.checked ? "si" : "no"
 
         this.sendingEmail = true;
-        emailjs.sendForm('comevol_id', 'template_kdxkep7', e.target as HTMLFormElement, 'user_yQWReIKlmIa21BNdihHgc')
+        emailjs.sendForm('vittagl_id', 'template_1tpxdsb', e.target as HTMLFormElement, 'user_yQWReIKlmIa21BNdihHgc')
             .then((result: EmailJSResponseStatus) => {
                 alert('Gracias por tu interés, en breve nos estaremos contactando.');
                 this.sendingEmail = false;
